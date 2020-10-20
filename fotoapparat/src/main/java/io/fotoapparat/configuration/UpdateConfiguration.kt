@@ -16,7 +16,8 @@ data class UpdateConfiguration(
         override val antiBandingMode: AntiBandingModeSelector? = null,
         override val sensorSensitivity: SensorSensitivitySelector? = null,
         override val previewResolution: ResolutionSelector? = null,
-        override val pictureResolution: ResolutionSelector? = null
+        override val pictureResolution: ResolutionSelector? = null,
+        override val sceneMode: SceneModeSelector? = null
 ) : Configuration {
 
     /**
@@ -74,6 +75,12 @@ data class UpdateConfiguration(
             )
         }
 
+        fun sceneMode(selector: SceneModeSelector): Builder = apply {
+            configuration = configuration.copy(
+                    sceneMode = selector
+            )
+        }
+
         fun photoResolution(selector: ResolutionSelector): Builder = apply {
             configuration = configuration.copy(
                     pictureResolution = selector
@@ -85,6 +92,7 @@ data class UpdateConfiguration(
                     frameProcessor = frameProcessor
             )
         }
+
 
         /**
          * Builds a new [UpdateConfiguration].

@@ -14,4 +14,5 @@ interface Configuration {
     val sensorSensitivity: SensorSensitivitySelector?
     val previewResolution: ResolutionSelector?
     val pictureResolution: ResolutionSelector?
+    val sceneMode: SceneModeSelector?
 }

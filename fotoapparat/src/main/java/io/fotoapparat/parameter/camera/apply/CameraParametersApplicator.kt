@@ -31,6 +31,8 @@ private infix fun CameraParameters.tryApplyInto(parameters: Camera.Parameters) {
     previewResolution applyPreviewInto parameters
     sensorSensitivity applySensitivityInto parameters
     pictureResolution applyPictureResolutionInto parameters
+    sceneMode applyInto parameters
+    //parameters.set("scene-mode", Camera.Parameters.SCENE_MODE_NIGHT)
 }
 
 private infix fun Flash.applyInto(parameters: Camera.Parameters) {
@@ -71,6 +73,10 @@ private infix fun Resolution.applyPreviewInto(parameters: Camera.Parameters) {
 
 private infix fun Resolution.applyPictureResolutionInto(parameters: Camera.Parameters) {
     parameters.setPictureSize(width, height)
+}
+
+private infix fun SceneMode.applyInto(parameters: Camera.Parameters) {
+    parameters.sceneMode = toCode()
 }
 
 private fun Camera.Parameters.findSensitivityKey() = currentSensitivityKeys.find { get(it) != null }

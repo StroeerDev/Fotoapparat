@@ -17,7 +17,8 @@ data class CameraParameters(
         val antiBandingMode: AntiBandingMode,
         val sensorSensitivity: Int?,
         val pictureResolution: Resolution,
-        val previewResolution: Resolution
+        val previewResolution: Resolution,
+        val sceneMode: SceneMode
 ) {
     override fun toString(): String {
         return "CameraParameters" + lineSeparator +

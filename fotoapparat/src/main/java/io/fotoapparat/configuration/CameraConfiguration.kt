@@ -30,7 +30,16 @@ data class CameraConfiguration(
         ),
         override val sensorSensitivity: SensorSensitivitySelector? = null,
         override val pictureResolution: ResolutionSelector = highestResolution(),
-        override val previewResolution: ResolutionSelector = highestResolution()
+        override val previewResolution: ResolutionSelector = highestResolution(),
+        override val sceneMode: SceneModeSelector = firstAvailable(
+                autoScene(),
+                action(),
+                portrait(),
+                landscape(),
+                night(),
+                nightPortrait(),
+                barcode()
+        )
 ) : Configuration {
 
     /**
@@ -85,6 +94,12 @@ data class CameraConfiguration(
         fun previewResolution(selector: ResolutionSelector): Builder = apply {
             cameraConfiguration = cameraConfiguration.copy(
                     previewResolution = selector
+            )
+        }
+
+        fun sceneMode(selector: SceneModeSelector): Builder = apply {
+            cameraConfiguration.copy(
+                    sceneMode = selector
             )
         }
 
