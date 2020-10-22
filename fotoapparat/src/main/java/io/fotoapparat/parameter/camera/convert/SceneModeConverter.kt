@@ -1,7 +1,6 @@
 package io.fotoapparat.parameter.camera.convert
 
 import android.hardware.Camera
-import io.fotoapparat.parameter.AntiBandingMode
 import io.fotoapparat.parameter.SceneMode
 
 /**

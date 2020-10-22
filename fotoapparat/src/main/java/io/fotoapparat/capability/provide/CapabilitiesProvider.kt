@@ -26,7 +26,8 @@ private fun SupportedParameters.getCapabilities(): Capabilities {
             sensorSensitivities = sensorSensitivities.toSet(),
             previewFpsRanges = supportedPreviewFpsRanges.extract { it.toFpsRange() },
             pictureResolutions = pictureResolutions.mapSizes(),
-            previewResolutions = previewResolutions.mapSizes()
+            previewResolutions = previewResolutions.mapSizes(),
+            sceneModes = sceneMode.extract { it.toSceneMode() }
     )
 }
 

@@ -7,6 +7,7 @@ import io.fotoapparat.exception.camera.UnsupportedConfigurationException
 import io.fotoapparat.hardware.CameraDevice
 import io.fotoapparat.parameter.Parameter
 import io.fotoapparat.parameter.Resolution
+import io.fotoapparat.parameter.SceneMode
 import io.fotoapparat.parameter.camera.CameraParameters
 import io.fotoapparat.selector.*
 
@@ -36,7 +37,8 @@ internal fun getCameraParameters(
                     antiBandingMode = antiBandingMode selectFrom antiBandingModes,
                     pictureResolution = selectedPictureResolution,
                     previewResolution = validPreviewSizeSelector selectFrom previewResolutions,
-                    sensorSensitivity = sensorSensitivity selectOptionalFrom sensorSensitivities
+                    sensorSensitivity = sensorSensitivity selectOptionalFrom sensorSensitivities,
+                    sceneMode = sceneMode selectFrom sceneModes
             )
         }
     }

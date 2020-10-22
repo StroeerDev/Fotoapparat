@@ -31,15 +31,7 @@ data class CameraConfiguration(
         override val sensorSensitivity: SensorSensitivitySelector? = null,
         override val pictureResolution: ResolutionSelector = highestResolution(),
         override val previewResolution: ResolutionSelector = highestResolution(),
-        override val sceneMode: SceneModeSelector = firstAvailable(
-                autoScene(),
-                action(),
-                portrait(),
-                landscape(),
-                night(),
-                nightPortrait(),
-                barcode()
-        )
+        override val sceneMode: SceneModeSelector = autoScene()
 ) : Configuration {
 
     /**

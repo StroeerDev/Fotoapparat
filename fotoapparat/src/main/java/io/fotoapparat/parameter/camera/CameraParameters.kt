@@ -30,6 +30,7 @@ data class CameraParameters(
                 "antiBandingMode:" + antiBandingMode.wrap() +
                 "sensorSensitivity:" + sensorSensitivity.wrap() +
                 "pictureResolution:" + pictureResolution.wrap() +
-                "previewResolution:" + previewResolution.wrap()
+                "previewResolution:" + previewResolution.wrap() +
+                "sceneMode:" + sceneMode.wrap()
     }
 }

@@ -104,6 +104,13 @@ internal class SupportedParameters(
     val maxNumMeteringAreas by lazy {
         cameraParameters.maxNumMeteringAreas
     }
+
+    /**
+     * @see Camera.Parameters.getSupportedSceneModes
+     */
+    val sceneMode: List<String> by lazy {
+        cameraParameters.supportedSceneModes ?: listOf(Camera.Parameters.SCENE_MODE_AUTO)
+    }
 }
 
 private val supportedSensitivitiesKeys = listOf("iso-values", "iso-mode-values", "iso-speed-values", "nv-picture-iso-values")

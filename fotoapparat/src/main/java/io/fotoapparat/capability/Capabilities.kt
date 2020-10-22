@@ -22,7 +22,8 @@ data class Capabilities(
         val antiBandingModes: Set<AntiBandingMode>,
         val pictureResolutions: Set<Resolution>,
         val previewResolutions: Set<Resolution>,
-        val sensorSensitivities: Set<Int>
+        val sensorSensitivities: Set<Int>,
+        val sceneModes: Set<SceneMode>
 ) {
 
     init {
@@ -32,6 +33,7 @@ data class Capabilities(
         previewFpsRanges.ensureNotEmpty()
         pictureResolutions.ensureNotEmpty()
         previewResolutions.ensureNotEmpty()
+        sceneModes.ensureNotEmpty()
     }
 
     override fun toString(): String {
@@ -48,7 +50,8 @@ data class Capabilities(
                 "previewFpsRanges:" + previewFpsRanges.wrap() +
                 "pictureResolutions:" + pictureResolutions.wrap() +
                 "previewResolutions:" + previewResolutions.wrap() +
-                "sensorSensitivities:" + sensorSensitivities.wrap()
+                "sensorSensitivities:" + sensorSensitivities.wrap() +
+                "sceneModes:" + sceneModes.wrap()
     }
 }
 
