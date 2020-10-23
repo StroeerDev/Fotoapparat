@@ -110,6 +110,15 @@ class FotoapparatBuilder internal constructor(private var context: Context) {
     }
 
     /**
+     * @param selector of the scene modes.
+     */
+    fun sceneMode(selector : SceneModeSelector):  FotoapparatBuilder = apply {
+        configuration = configuration.copy(
+                sceneMode = selector
+        )
+    }
+
+    /**
      * @param selector selects exposure compensation value from available range.
      */
     fun exposureCompensation(selector: ExposureSelector): FotoapparatBuilder = apply {
@@ -137,6 +146,8 @@ class FotoapparatBuilder internal constructor(private var context: Context) {
                 frameProcessor = frameProcessor?.let { it::process }
         )
     }
+
+
 
     /**
      * @param logger logger which will print logs. No logger is set by default.
