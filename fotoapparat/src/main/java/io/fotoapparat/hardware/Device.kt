@@ -176,7 +176,9 @@ internal fun updateConfiguration(
         pictureResolution = newConfiguration.pictureResolution
                 ?: savedConfiguration.pictureResolution,
         previewResolution = newConfiguration.previewResolution
-                ?: savedConfiguration.previewResolution
+                ?: savedConfiguration.previewResolution,
+        sceneMode = newConfiguration.sceneMode
+                ?: savedConfiguration.sceneMode
 )
 
 /**
